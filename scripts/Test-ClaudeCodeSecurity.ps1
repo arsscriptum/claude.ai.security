@@ -10,12 +10,12 @@
 
 param(
     [Parameter(Position = 0, Mandatory = $true)] 
-    [string] $ProjectsRoot
+    [string] $ProjectsRoot,
     [Parameter(Mandatory = $false)] 
     [int]$MaxDepth    = 19
 )
 
-try{
+try {
     $compromisedAxios = @('1.14.1', '0.30.4')
     $maliciousDep     = 'plain-crypto-js'
     $lockfileNames    = @('package-lock.json', 'yarn.lock', 'bun.lockb')
@@ -45,7 +45,7 @@ try{
     # ── 2. Lockfile scan across your projects ────────────────────────────────
     Write-Host "`n=== Scanning lockfiles under: $ProjectsRoot ===" -ForegroundColor Cyan
 
-    $lockfiles = Get-ChildItem -Path $ProjectsRoot -Recurse -File -Include $lockfileNames -MaxDepth $MaxDepth -ErrorAction SilentlyContinue
+    $lockfiles = Get-ChildItem -Path $ProjectsRoot -Recurse -File -Include $lockfileNames -Depth $MaxDepth -ErrorAction SilentlyContinue
 
     if (-not $lockfiles) {
         Write-Host "[OK]    No lockfiles found." -ForegroundColor Green
@@ -98,7 +98,7 @@ try{
 
     return $foundIssues
 
-catch {
+} catch {
     Write-Error "$_"
 }
 
