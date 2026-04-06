@@ -146,7 +146,7 @@ Sauvegardez [Test-ClaudeCodeSecurity.ps1](scripts/Test-ClaudeCodeSecurity.ps1) �
 
 ### Configuration
 
-Sauvegardez [Check-ClaudeCodeSecurity.ps1](scripts/check_claude_security.sh) à l'emplacement de votre choix.
+Sauvegardez [check_claude_security.sh](scripts/check_claude_security.sh) à l'emplacement de votre choix.
 
 ```bash
 chmod +x check_claude_security.sh

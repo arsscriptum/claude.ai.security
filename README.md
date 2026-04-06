@@ -141,7 +141,7 @@ Save [Test-ClaudeCodeSecurity.ps1](scripts/Test-ClaudeCodeSecurity.ps1) to a loc
 
 ### Setup
 
-Save [Check-ClaudeCodeSecurity.ps1](scripts/check_claude_security.sh) to a location of your choice.
+Save [check_claude_security.sh](scripts/check_claude_security.sh) to a location of your choice.
 
 
 ```bash
